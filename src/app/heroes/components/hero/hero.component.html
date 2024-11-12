@@ -1,0 +1,40 @@
+<h1>{{ name }}</h1>
+
+<div class="card">
+    <div class="hero-info">
+        <label for="">Nombre real:</label>
+        <span>{{ realName }}</span>
+    </div>
+    <div class="hero-info">
+        <label for="">Edad:</label>
+        <span>{{ age }}</span>
+    </div>
+    <div class="hero-info">
+        <label for="">Metodo:</label>
+        <span>{{ getHeroDescription() }}</span>
+    </div>
+    <div class="hero-info">
+        <label for="">Nombre capitalizado:</label>
+        <span>{{ capitalizedName }}</span>
+    </div>
+    <div class="buttons">
+        <button 
+            *ngIf="showAgeButton"  
+            class="btn btn-secondary"
+            (click)="onChangeHeroAgeHandler(45)"
+            >
+            Cambiar Edad
+        </button>
+        <button 
+            *ngIf="showNameButton"
+            class="btn btn-primary"
+            (click)="onChangeHeroNameHandler('IronMan')"
+            >Cambiar Nombre
+        </button>
+        <button 
+            class="btn btn-primary"
+            (click)="pnResetFormHandler()"
+            >Reset Form
+        </button>
+    </div>
+</div>
